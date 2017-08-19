@@ -8,15 +8,12 @@
         <p>Stories of cats</p>
         <p>...Really true stories</p>
     </div>
-    <div>
-        <p>Published</p>
-        <h2>Post Title</h2>
-        <p>Post Content</p>
-    </div>
-    <div>
-        <p>Published</p>
-        <h2>Post Title</h2>
-        <p>Post Content</p>
-    </div>
+    {% for post in posts %}
+        <div>
+            <p>Published{{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>
